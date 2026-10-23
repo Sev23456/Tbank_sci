@@ -1,0 +1,12 @@
+# environment
+.venv/
+__pycache__/
+*.pyc
+
+# intermediate data (rebuilt by prepare.py / run_all.py)
+data/
+data_smoke/
+*.parquet
+
+# backup of the previous full run
+results_prev/
