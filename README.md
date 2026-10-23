@@ -201,11 +201,12 @@ derived: rate (event₁/event₂, т.е. конверсии), share (u×X / u �
 
 ### Данные
 
-Нужны три файла из [yandex/yambda](https://huggingface.co/datasets/yandex/yambda), всего ~3.7 ГБ: `flat/500m/multi_event.parquet` (3.6 ГБ), `artist_item_mapping.parquet` и `album_item_mapping.parquet`. Код ищет их в HF-кэше рядом с папкой `solution` (`../hub/datasets--yandex--yambda/snapshots/<revision>/`, путь задан в [config.py](src/config.py)). Скачать именно эту ревизию в этот кэш:
+Нужны три файла из [yandex/yambda](https://huggingface.co/datasets/yandex/yambda), всего ~3.7 ГБ: `flat/500m/multi_event.parquet` (3.6 ГБ), `artist_item_mapping.parquet` и `album_item_mapping.parquet`. Код ищет их в HF-кэше рядом с папкой репозитория (`../hub/datasets--yandex--yambda/snapshots/<revision>/`, путь задан в [config.py](src/config.py)). Склонировать репозиторий и скачать именно эту ревизию в этот кэш:
 
 ```bash
 pip install -U huggingface_hub
-cd solution
+git clone https://github.com/Sev23456/Tbank_sci.git
+cd Tbank_sci
 hf download yandex/yambda --repo-type dataset --revision dd6f3a19eef5866e346c3270e098baa641a44948 --cache-dir ../hub flat/500m/multi_event.parquet artist_item_mapping.parquet album_item_mapping.parquet
 ```
 
@@ -214,7 +215,6 @@ hf download yandex/yambda --repo-type dataset --revision dd6f3a19eef5866e346c327
 ### Запуск
 
 ```bash
-cd solution
 python -m venv .venv && .venv/Scripts/pip install -r requirements.txt   # Linux/macOS: .venv/bin/pip
 cd src
 python prepare.py           # 480 млн событий -> 16 бакетов (data/events), ~20 с
