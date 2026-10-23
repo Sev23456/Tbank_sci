@@ -1,0 +1,272 @@
+22:14:29 config {'buckets': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'train_users': 20000, 'val_users': 5000, 'test_users': None, 'neg': 30, 'n_screen': 300, 'max_try': 150} data=D:\ML\T\solution\data results=D:\ML\T\solution\results
+22:14:29 === stage cands
+[train] bucket 0: users=1263 cands=47,624 t=20s
+[train] bucket 1: users=1254 cands=47,132 t=20s
+[train] bucket 2: users=1246 cands=46,782 t=21s
+[train] bucket 3: users=1270 cands=47,650 t=21s
+[train] bucket 4: users=1246 cands=46,716 t=22s
+[train] bucket 5: users=1235 cands=46,790 t=22s
+[train] bucket 6: users=1280 cands=47,744 t=23s
+[train] bucket 7: users=1197 cands=44,426 t=23s
+[train] bucket 8: users=1267 cands=47,565 t=24s
+[train] bucket 9: users=1247 cands=46,588 t=24s
+[train] bucket 10: users=1258 cands=47,138 t=25s
+[train] bucket 11: users=1259 cands=47,542 t=25s
+[train] bucket 12: users=1224 cands=46,386 t=25s
+[train] bucket 13: users=1195 cands=45,302 t=26s
+[train] bucket 14: users=1302 cands=48,587 t=26s
+[train] bucket 15: users=1257 cands=47,288 t=27s
+[train] cand recall=0.2816 avg cands=253.3
+[val] bucket 0: users=327 cands=83,590 t=21s
+[val] bucket 1: users=284 cands=72,707 t=21s
+[val] bucket 2: users=323 cands=82,146 t=22s
+[val] bucket 3: users=308 cands=78,280 t=22s
+[val] bucket 4: users=320 cands=80,185 t=22s
+[val] bucket 5: users=307 cands=78,917 t=23s
+[val] bucket 6: users=329 cands=84,163 t=23s
+[val] bucket 7: users=303 cands=76,760 t=23s
+[val] bucket 8: users=314 cands=79,344 t=24s
+[val] bucket 9: users=298 cands=75,519 t=24s
+[val] bucket 10: users=323 cands=82,216 t=24s
+[val] bucket 11: users=322 cands=82,633 t=25s
+[val] bucket 12: users=274 cands=70,235 t=25s
+[val] bucket 13: users=300 cands=75,507 t=25s
+[val] bucket 14: users=355 cands=90,666 t=26s
+[val] bucket 15: users=313 cands=79,792 t=26s
+[val] cand recall=0.2734 avg cands=254.5
+[test] bucket 0: users=2792 cands=706,303 t=23s
+[test] bucket 1: users=2784 cands=708,412 t=24s
+[test] bucket 2: users=2863 cands=724,563 t=25s
+[test] bucket 3: users=2950 cands=747,978 t=26s
+[test] bucket 4: users=2846 cands=718,805 t=26s
+[test] bucket 5: users=2929 cands=739,593 t=27s
+[test] bucket 6: users=2978 cands=754,973 t=28s
+[test] bucket 7: users=2902 cands=733,143 t=29s
+[test] bucket 8: users=2906 cands=732,281 t=29s
+[test] bucket 9: users=2893 cands=733,088 t=30s
+[test] bucket 10: users=2960 cands=749,460 t=31s
+[test] bucket 11: users=2889 cands=732,112 t=31s
+[test] bucket 12: users=2852 cands=721,288 t=32s
+[test] bucket 13: users=2756 cands=698,712 t=33s
+[test] bucket 14: users=2807 cands=712,915 t=33s
+[test] bucket 15: users=2833 cands=718,599 t=34s
+[test] cand recall=0.2814 avg cands=253.2
+22:15:56 === stage cands done in 87s, peak RSS 8.1 GB
+22:15:56 === stage feats
+[train/all] 1236 features x 751,260 rows: global 204s, total 220s
+[val/all] 1236 features x 1,272,660 rows: global 207s, total 219s
+22:23:16 === stage feats done in 440s, peak RSS 8.9 GB
+22:23:16 === stage select
+22:23:31 selection data: train (751260, 1246), val (1272660, 1246)
+22:24:24 screen: 1236 -> 232 features (53s)
+22:24:32 importance model: 64 trees (8s)
+22:24:36   fwd   1 + ui.since_last.lplus                      0.20092 best=0.20092 n=1
+22:24:38   fwd   2 + ui.share.lplus.7d                        0.22453 best=0.22453 n=2
+22:24:41   fwd   3 + ui.rate.lplus/listen.90d                 0.22669 best=0.22669 n=3
+22:24:42   fwd   4 + ui.cnt.lplus.7d                          0.23037 best=0.23037 n=4
+22:24:44   fwd   5   ui.mratio.listen.all                     0.22976 best=0.23037 n=4
+22:24:47   fwd   6 + ui.share.lplus.all                       0.23229 best=0.23229 n=5
+22:24:49   fwd   7 + ui.share.lplus.14d                       0.23508 best=0.23508 n=6
+22:24:52   fwd   8 + ui.since_first.like                      0.24792 best=0.24792 n=7
+22:24:54   fwd   9 + ui.cnt.listen.7d                         0.25016 best=0.25016 n=8
+22:24:56   fwd  10   ua.share.listen.90d                      0.24960 best=0.25016 n=8
+22:24:59   fwd  11   ui.share.listen.7d                       0.25035 best=0.25016 n=8
+22:25:01   fwd  12   ui.mratio.listen.90d                     0.25037 best=0.25016 n=8
+22:25:04   fwd  13   ui.share.listen.3d                       0.25042 best=0.25016 n=8
+22:25:06   fwd  14 + ui.cnt.org.14d                           0.25119 best=0.25119 n=9
+22:25:09   fwd  15 + ui.share.like.90d                        0.25213 best=0.25213 n=10
+22:25:11   fwd  16 + ui.share.lplus.3d                        0.25338 best=0.25338 n=11
+22:25:14   fwd  17 + ui.rate.skip/listen.all                  0.25459 best=0.25459 n=12
+22:25:17   fwd  18   ua.trend.lplus.90d/all                   0.25410 best=0.25459 n=12
+22:25:20   fwd  19   ua.rate.org/listen.all                   0.25433 best=0.25459 n=12
+22:25:22   fwd  20   ui.since_last.listen                     0.25430 best=0.25459 n=12
+22:25:25   fwd  21 + ui.share.listen.14d                      0.25549 best=0.25549 n=13
+22:25:27   fwd  22   ua.rate.org/listen.90d                   0.25480 best=0.25549 n=13
+22:25:30   fwd  23   ui.cnt.lplus.90d                         0.25569 best=0.25549 n=13
+22:25:33   fwd  24   ui.share.listen.90d                      0.25547 best=0.25549 n=13
+22:25:36   fwd  25   ual.since_last.like                      0.25484 best=0.25549 n=13
+22:25:38   fwd  26   ui.rate.org/listen.7d                    0.25463 best=0.25549 n=13
+22:25:41   fwd  27   ui.cnt.lplus.3d                          0.25544 best=0.25549 n=13
+22:25:43   fwd  28   ui.cnt.listen.14d                        0.25459 best=0.25549 n=13
+22:25:45   fwd  29   ui.share.listen.30d                      0.25552 best=0.25549 n=13
+22:25:48   fwd  30   ui.rate.like/listen.14d                  0.25504 best=0.25549 n=13
+22:25:50   fwd  31   ual.share.listen.14d                     0.25486 best=0.25549 n=13
+22:25:53   fwd  32   ua.rate.org/listen.7d                    0.25469 best=0.25549 n=13
+22:25:55   fwd  33   ua.rate.like/listen.30d                  0.25538 best=0.25549 n=13
+22:25:59   fwd  34   ui.cnt.listen.3d                         0.25587 best=0.25549 n=13
+22:26:01   fwd  35   ual.since_first.listen                   0.25445 best=0.25549 n=13
+22:26:03   fwd  36   ua.rate.like/listen.90d                  0.25585 best=0.25549 n=13
+22:26:06   fwd  37   ua.rate.org/listen.30d                   0.25500 best=0.25549 n=13
+22:26:08   fwd  38   ual.since_last.org                       0.25473 best=0.25549 n=13
+22:26:11   fwd  39   ual.share.listen.3d                      0.25446 best=0.25549 n=13
+22:26:15   fwd  40   ual.share.lplus.3d                       0.25371 best=0.25549 n=13
+22:26:17   fwd  41   ua.share.listen.3d                       0.25502 best=0.25549 n=13
+22:26:20   fwd  42   ui.share.like.all                        0.25448 best=0.25549 n=13
+22:26:23   fwd  43   ua.mratio.listen.14d                     0.25451 best=0.25549 n=13
+22:26:26   fwd  44 + ua.nuniq.lplus.30d                       0.25600 best=0.25600 n=14
+22:26:29   fwd  45   ui.cnt.listen.30d                        0.25632 best=0.25600 n=14
+22:26:32   fwd  46   ui.rate.org/listen.90d                   0.25524 best=0.25600 n=14
+22:26:34   fwd  47   ua.share.listen.7d                       0.25493 best=0.25600 n=14
+22:26:37   fwd  48   ui.mratio.reco.90d                       0.25534 best=0.25600 n=14
+22:26:40   fwd  49   ui.since_last.org                        0.25573 best=0.25600 n=14
+22:26:42   fwd  50   ui.since_first.listen                    0.25603 best=0.25600 n=14
+22:26:45   fwd  51   ua.share.lplus.30d                       0.25526 best=0.25600 n=14
+22:26:47   fwd  52   ui.rate.org/listen.3d                    0.25540 best=0.25600 n=14
+22:26:50   fwd  53   ui.mratio.reco.30d                       0.25526 best=0.25600 n=14
+22:26:52   fwd  54   ui.mratio.org.90d                        0.25551 best=0.25600 n=14
+22:26:55   fwd  55   ua.trend.lplus.7d/30d                    0.25542 best=0.25600 n=14
+22:26:57   fwd  56   ua.share.listen.14d                      0.25473 best=0.25600 n=14
+22:27:00   fwd  57   ua.rate.like/listen.all                  0.25420 best=0.25600 n=14
+22:27:02   fwd  58   ua.cnt.lplus.30d                         0.25463 best=0.25600 n=14
+22:27:05   fwd  59   ua.cnt.skip.all                          0.25487 best=0.25600 n=14
+22:27:07   fwd  60   ua.mratio.org.all                        0.25473 best=0.25600 n=14
+22:27:09   fwd  61   ui.mratio.reco.7d                        0.25445 best=0.25600 n=14
+22:27:11   fwd  62   ui.share.skip.30d                        0.25331 best=0.25600 n=14
+22:27:13   fwd  63   ual.nuniq.lplus.30d                      0.25513 best=0.25600 n=14
+22:27:16   fwd  64   ual.mratio.listen.all                    0.25464 best=0.25600 n=14
+22:27:18   fwd  65   ual.share.lplus.90d                      0.25564 best=0.25600 n=14
+22:27:20   fwd  66   ui.mratio.org.1d                         0.25512 best=0.25600 n=14
+22:27:24   fwd  67   ua.cnt.skip.90d                          0.25503 best=0.25600 n=14
+22:27:26   fwd  68   ui.cnt.listen.all                        0.25581 best=0.25600 n=14
+22:27:28   fwd  69   ua.trend.lplus.30d/90d                   0.25464 best=0.25600 n=14
+22:27:31   fwd  70   ui.rate.like/listen.all                  0.25537 best=0.25600 n=14
+22:27:34   fwd  71   ui.mratio.reco.all                       0.25407 best=0.25600 n=14
+22:27:37   fwd  72   ual.share.like.all                       0.25562 best=0.25600 n=14
+22:27:39   fwd  73   ua.rate.org/listen.3d                    0.25527 best=0.25600 n=14
+22:27:42   fwd  74   ui.cnt.org.30d                           0.25534 best=0.25600 n=14
+22:27:45   fwd  75   ua.share.skip.30d                        0.25470 best=0.25600 n=14
+22:27:47   fwd  76   ua.cnt.listen.90d                        0.25586 best=0.25600 n=14
+22:27:50   fwd  77   ui.rate.org/listen.30d                   0.25513 best=0.25600 n=14
+22:27:54   fwd  78   ua.rate.org/listen.14d                   0.25517 best=0.25600 n=14
+22:27:57   fwd  79   ua.mratio.org.90d                        0.25506 best=0.25600 n=14
+22:28:00   fwd  80   ua.nuniq.lplus.7d                        0.25472 best=0.25600 n=14
+22:28:02   fwd  81   ual.mratio.org.all                       0.25518 best=0.25600 n=14
+22:28:05   fwd  82   ual.share.skip.14d                       0.25477 best=0.25600 n=14
+22:28:08   fwd  83   ual.trend.lplus.30d/90d                  0.25567 best=0.25600 n=14
+22:28:11   fwd  84   ual.trend.lplus.90d/all                  0.25601 best=0.25600 n=14
+22:28:13   fwd  85   ui.mratio.org.14d                        0.25504 best=0.25600 n=14
+22:28:16   fwd  86   ui.share.skip.all                        0.25479 best=0.25600 n=14
+22:28:18   fwd  87   ual.mratio.reco.30d                      0.25511 best=0.25600 n=14
+22:28:21   fwd  88   ui.mratio.org.30d                        0.25556 best=0.25600 n=14
+22:28:24   fwd  89   ua.rate.like/listen.14d                  0.25563 best=0.25600 n=14
+22:28:27   fwd  90   ua.cnt.org.30d                           0.25503 best=0.25600 n=14
+22:28:29   fwd  91   ui.mratio.reco.14d                       0.25485 best=0.25600 n=14
+22:28:32   fwd  92   ua.cnt.listen.14d                        0.25460 best=0.25600 n=14
+22:28:35   fwd  93   ual.trend.listen.30d/90d                 0.25519 best=0.25600 n=14
+22:28:37   fwd  94   ua.share.skip.90d                        0.25523 best=0.25600 n=14
+22:28:40   fwd  95   ual.share.listen.30d                     0.25516 best=0.25600 n=14
+22:28:42   fwd  96   ui.rate.org/listen.all                   0.25412 best=0.25600 n=14
+22:28:45   fwd  97   ui.since_last.skip                       0.25488 best=0.25600 n=14
+22:28:47   fwd  98   ui.rate.like/listen.30d                  0.25519 best=0.25600 n=14
+22:28:49   fwd  99   ua.cnt.org.90d                           0.25478 best=0.25600 n=14
+22:28:52   fwd 100   ua.cnt.skip.30d                          0.25506 best=0.25600 n=14
+22:28:54   fwd 101   ua.trend.listen.90d/all                  0.25574 best=0.25600 n=14
+22:28:57   fwd 102   ua.trend.listen.1d/7d                    0.25526 best=0.25600 n=14
+22:28:59   fwd 103   ual.share.listen.all                     0.25485 best=0.25600 n=14
+22:29:02   fwd 104   ual.share.lplus.7d                       0.25459 best=0.25600 n=14
+22:29:04   fwd 105   ua.mratio.org.14d                        0.25542 best=0.25600 n=14
+22:29:07   fwd 106   ual.mratio.org.30d                       0.25587 best=0.25600 n=14
+22:29:11   fwd 107   ua.mratio.org.30d                        0.25548 best=0.25600 n=14
+22:29:13   fwd 108   ual.mratio.listen.14d                    0.25517 best=0.25600 n=14
+22:29:16   fwd 109   ual.cnt.listen.all                       0.25503 best=0.25600 n=14
+22:29:19   fwd 110   ual.rate.like/listen.14d                 0.25521 best=0.25600 n=14
+22:29:22   fwd 111   ual.mratio.reco.14d                      0.25496 best=0.25600 n=14
+22:29:25   fwd 112   ual.rate.like/listen.90d                 0.25552 best=0.25600 n=14
+22:29:27   fwd 113   ual.mratio.org.90d                       0.25456 best=0.25600 n=14
+22:29:30   fwd 114   ua.trend.lplus.1d/7d                     0.25553 best=0.25600 n=14
+22:29:32   fwd 115   ua.mratio.listen.7d                      0.25542 best=0.25600 n=14
+22:29:35   fwd 116   ual.mratio.org.1d                        0.25484 best=0.25600 n=14
+22:29:37   fwd 117   ui.mratio.reco.3d                        0.25567 best=0.25600 n=14
+22:29:39   fwd 118   ual.trend.listen.7d/30d                  0.25538 best=0.25600 n=14
+22:29:42   fwd 119   ui.trend.lplus.30d/90d                   0.25574 best=0.25600 n=14
+22:29:45   fwd 120   ui.rate.skip/listen.30d                  0.25475 best=0.25600 n=14
+22:29:48   fwd 121   ual.nuniq.lplus.all                      0.25527 best=0.25600 n=14
+22:29:49   fwd 122   ua.rate.skip/listen.30d                  0.25425 best=0.25600 n=14
+22:29:52   fwd 123   ua.rate.like/listen.3d                   0.25600 best=0.25600 n=14
+22:29:54   fwd 124   ua.mratio.listen.3d                      0.25506 best=0.25600 n=14
+22:29:57   fwd 125   ui.rate.org/listen.14d                   0.25547 best=0.25600 n=14
+22:30:00   fwd 126   ua.cnt.listen.7d                         0.25503 best=0.25600 n=14
+22:30:03   fwd 127   ui.trend.listen.7d/30d                   0.25516 best=0.25600 n=14
+22:30:05   fwd 128   ui.trend.listen.1d/7d                    0.25497 best=0.25600 n=14
+22:30:08   fwd 129   ui.mratio.listen.30d                     0.25553 best=0.25600 n=14
+22:30:10   fwd 130   ua.rate.like/listen.7d                   0.25484 best=0.25600 n=14
+22:30:13   fwd 131   ua.mratio.org.7d                         0.25497 best=0.25600 n=14
+22:30:15   fwd 132   ual.mratio.reco.90d                      0.25369 best=0.25600 n=14
+22:30:18   fwd 133   ui.rate.skip/listen.90d                  0.25461 best=0.25600 n=14
+22:30:20   fwd 134   ual.rate.org/listen.90d                  0.25523 best=0.25600 n=14
+22:30:23   fwd 135   ui.mratio.listen.14d                     0.25476 best=0.25600 n=14
+22:30:25   fwd 136   ui.trend.listen.30d/90d                  0.25437 best=0.25600 n=14
+22:30:28   fwd 137   ua.rate.skip/listen.14d                  0.25471 best=0.25600 n=14
+22:30:30   fwd 138   ual.mratio.reco.all                      0.25516 best=0.25600 n=14
+22:30:32   fwd 139   ual.cnt.lplus.90d                        0.25483 best=0.25600 n=14
+22:30:35   fwd 140   ua.trend.listen.30d/90d                  0.25548 best=0.25600 n=14
+22:30:38   fwd 141   ui.mratio.reco.1d                        0.25507 best=0.25600 n=14
+22:30:41   fwd 142   ual.trend.listen.90d/all                 0.25603 best=0.25600 n=14
+22:30:43   fwd 143   ui.trend.listen.90d/all                  0.25526 best=0.25600 n=14
+22:30:45   fwd 144   ual.rate.like/listen.all                 0.25470 best=0.25600 n=14
+22:30:47   fwd 145   ua.cnt.lplus.3d                          0.25577 best=0.25600 n=14
+22:30:50   fwd 146   ual.trend.lplus.1d/7d                    0.25608 best=0.25600 n=14
+22:30:52   fwd 147   ual.mratio.listen.90d                    0.25571 best=0.25600 n=14
+22:30:54   fwd 148   ual.mratio.listen.1d                     0.25568 best=0.25600 n=14
+22:30:57   fwd 149   ual.mratio.reco.7d                       0.25470 best=0.25600 n=14
+22:31:00   fwd 150   ual.trend.listen.1d/7d                   0.25569 best=0.25600 n=14
+22:31:16   window ui.share.lplus.all -> ui.share.lplus.90d: 0.25600 -> 0.25651
+22:31:21   window ui.cnt.listen.7d -> ui.cnt.listen.3d: 0.25651 -> 0.25726
+22:31:45 === stage select done in 509s, peak RSS 17.8 GB
+22:31:45 === stage test_feats
+[test/final] 264 features x 11,632,225 rows: global 15s, total 53s
+[test/manual] 41 features x 11,632,225 rows: global 12s, total 22s
+22:32:59 === stage test_feats done in 75s, peak RSS 17.8 GB
+22:32:59 === stage final
+22:33:14 tune {'num_leaves': 31, 'min_data_in_leaf': 50}: 0.25874
+22:33:23 tune {'num_leaves': 31, 'min_data_in_leaf': 200}: 0.25829
+22:33:35 tune {'num_leaves': 63, 'min_data_in_leaf': 50}: 0.25962
+22:33:46 tune {'num_leaves': 63, 'min_data_in_leaf': 200}: 0.25943
+22:33:56 tune {'num_leaves': 127, 'min_data_in_leaf': 50}: 0.25919
+22:34:03 tune {'num_leaves': 127, 'min_data_in_leaf': 200}: 0.25834
+22:34:09 candidate scores only: 0 feats, val {'ndcg@10': 0.1892196914018056, 'recall@10': 0.18955222222222223, 'ndcg@100': 0.2272649853653913, 'recall@100': 0.30850653379388576}, 3s
+22:34:45 manual: 41 feats, val {'ndcg@10': 0.25961947989156087, 'recall@10': 0.2551212698412698, 'ndcg@100': 0.2761151212291415, 'recall@100': 0.3398959697189461}, 9s
+22:35:18 auto: top-B by importance: 41 feats, val {'ndcg@10': 0.2607250926239372, 'recall@10': 0.25512904761904764, 'ndcg@100': 0.27638268909066943, 'recall@100': 0.33796382526539476}, 6s
+22:35:48 auto: forward (budget B): 14 feats, val {'ndcg@10': 0.25541626237677667, 'recall@10': 0.2504775396825397, 'ndcg@100': 0.2724110121094619, 'recall@100': 0.3346753763115601}, 5s
+22:36:18 auto: forward: 14 feats, val {'ndcg@10': 0.25541626237677667, 'recall@10': 0.2504775396825397, 'ndcg@100': 0.2724110121094619, 'recall@100': 0.3346753763115601}, 5s
+22:36:49 auto: forward + window refine: 14 feats, val {'ndcg@10': 0.25800118100703695, 'recall@10': 0.2527938888888889, 'ndcg@100': 0.2734064179816003, 'recall@100': 0.3350505936146275}, 4s
+22:38:04 auto: all screened: 232 feats, val {'ndcg@10': 0.26188916154366204, 'recall@10': 0.25648579365079366, 'ndcg@100': 0.2770147014682893, 'recall@100': 0.33834387377688124}, 15s
+22:38:37 manual + auto (fwd+win): 54 feats, val {'ndcg@10': 0.2634978512025671, 'recall@10': 0.25856126984126987, 'ndcg@100': 0.27873239655702664, 'recall@100': 0.34154458086725953}, 6s
+22:38:58 manual - user: 33 feats, val {'ndcg@10': 0.2529713013111349, 'recall@10': 0.24928325396825393, 'ndcg@100': 0.27224061087185103, 'recall@100': 0.33786609073890306}, 5s
+22:39:27 manual - item: 30 feats, val {'ndcg@10': 0.2565454454302677, 'recall@10': 0.25144015873015874, 'ndcg@100': 0.27384322334461836, 'recall@100': 0.33660722141754734}, 6s
+22:40:00 manual - artist: 39 feats, val {'ndcg@10': 0.25890314258904573, 'recall@10': 0.2535914285714286, 'ndcg@100': 0.27590066425313536, 'recall@100': 0.33921843912212835}, 7s
+22:40:32 manual - user-item (direct): 31 feats, val {'ndcg@10': 0.23482512258887556, 'recall@10': 0.23369380952380953, 'ndcg@100': 0.26079409196308495, 'recall@100': 0.33407871297934444}, 8s
+22:41:00 manual - user-artist/album (indirect): 31 feats, val {'ndcg@10': 0.25707735050365366, 'recall@10': 0.25167253968253966, 'ndcg@100': 0.2744635091898157, 'recall@100': 0.33694222923253486}, 5s
+22:57:51 TEST candidate scores only: ndcg@10=0.19659 recall@100=0.31755
+22:57:54 TEST manual: ndcg@10=0.26568 recall@100=0.34857
+22:57:56 TEST auto: top-B by importance: ndcg@10=0.26837 recall@100=0.34715
+22:57:59 TEST auto: forward (budget B): ndcg@10=0.26314 recall@100=0.34481
+22:58:01 TEST auto: forward: ndcg@10=0.26314 recall@100=0.34481
+22:58:03 TEST auto: forward + window refine: ndcg@10=0.26354 recall@100=0.34455
+22:58:06 TEST auto: all screened: ndcg@10=0.26880 recall@100=0.34780
+22:58:08 TEST manual + auto (fwd+win): ndcg@10=0.27077 recall@100=0.34965
+22:58:11 TEST manual - user: ndcg@10=0.26015 recall@100=0.34603
+22:58:14 TEST manual - item: ndcg@10=0.26453 recall@100=0.34580
+22:58:16 TEST manual - artist: ndcg@10=0.26575 recall@100=0.34784
+22:58:19 TEST manual - user-item (direct): ndcg@10=0.24080 recall@100=0.34255
+22:58:22 TEST manual - user-artist/album (indirect): ndcg@10=0.26387 recall@100=0.34538
+22:58:22 TEST heur: repeat (rep_rank): ndcg@10=0.18615 recall@100=0.31483
+22:58:22 TEST heur: item2item score: ndcg@10=0.05793 recall@100=0.11935
+22:58:23 TEST heur: popularity 1d: ndcg@10=0.02605 recall@100=0.20471
+22:58:23 TEST heur: rep > i2i > artist > pop: ndcg@10=0.17487 recall@100=0.31585
+22:58:27 === stage final done in 1527s, peak RSS 17.8 GB
+22:58:27 === stage scaling
+23:01:13 SCALING manual @2127: 0.25568
+23:01:13 SCALING auto: forward + window refine @2127: 0.25509
+23:01:13 SCALING manual + auto (fwd+win) @2127: 0.26037
+23:01:14 SCALING manual @4255: 0.25850
+23:01:14 SCALING auto: forward + window refine @4255: 0.25824
+23:01:14 SCALING manual + auto (fwd+win) @4255: 0.26305
+23:01:15 SCALING manual @8511: 0.26277
+23:01:15 SCALING auto: forward + window refine @8511: 0.26119
+23:01:15 SCALING manual + auto (fwd+win) @8511: 0.26858
+23:01:16 SCALING manual @17022: 0.26568
+23:01:16 SCALING auto: forward + window refine @17022: 0.26354
+23:01:16 SCALING manual + auto (fwd+win) @17022: 0.27077
+23:01:16 === stage scaling done in 170s, peak RSS 17.8 GB
+written D:\ML\T\solution\results\report_tables.md

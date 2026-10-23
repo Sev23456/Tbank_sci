@@ -1,0 +1,92 @@
+﻿23:05:05 config {'buckets': [0, 1], 'train_users': 600, 'val_users': 300, 'test_users': 400, 'neg': 30, 'n_screen': 60, 'max_try': 15} data=D:\ML\T\solution\data_smoke results=D:\ML\T\solution\results_smoke
+23:05:05 === stage cands
+[train] bucket 0: users=296 cands=11,308 t=1s
+[train] bucket 1: users=304 cands=11,410 t=1s
+[train] cand recall=0.2727 avg cands=250.0
+[val] bucket 0: users=146 cands=36,228 t=1s
+[val] bucket 1: users=154 cands=38,006 t=1s
+[val] cand recall=0.2863 avg cands=247.4
+[test] bucket 0: users=193 cands=49,078 t=1s
+[test] bucket 1: users=207 cands=51,851 t=1s
+[test] cand recall=0.2653 avg cands=252.3
+23:05:09 === stage cands done in 4s, peak RSS 4.2 GB
+23:05:09 === stage feats
+[train/all] 1236 features x 22,718 rows: global 112s, total 113s
+[val/all] 1236 features x 74,234 rows: global 150s, total 151s
+23:09:33 === stage feats done in 264s, peak RSS 8.6 GB
+23:09:33 === stage select
+23:09:33 selection data: train (22718, 1246), val (74234, 1246)
+23:09:36 screen: 1236 -> 39 features (4s)
+23:09:37 importance model: 28 trees (0s)
+23:09:37   fwd   1   ui.share.lplus.all                       0.20503 best=0.20521 n=0
+23:09:37   fwd   2 + ua.cnt.lplus.30d                         0.20622 best=0.20622 n=1
+23:09:37   fwd   3 + ui.share.listen.14d                      0.22777 best=0.22777 n=2
+23:09:37   fwd   4   ui.cnt.listen.14d                        0.22727 best=0.22777 n=2
+23:09:37   fwd   5   ui.trend.lplus.90d/all                   0.22695 best=0.22777 n=2
+23:09:37   fwd   6   ui.rate.skip/listen.90d                  0.22202 best=0.22777 n=2
+23:09:37   fwd   7   ui.cnt.org.14d                           0.22524 best=0.22777 n=2
+23:09:38   fwd   8 + ui.trend.lplus.7d/30d                    0.23148 best=0.23148 n=3
+23:09:38   fwd   9 + ual.share.listen.30d                     0.23351 best=0.23351 n=4
+23:09:38   fwd  10   ual.share.lplus.all                      0.23102 best=0.23351 n=4
+23:09:38   fwd  11 + ui.share.listen.30d                      0.24088 best=0.24088 n=5
+23:09:38   fwd  12   ui.share.listen.90d                      0.22970 best=0.24088 n=5
+23:09:38   fwd  13   ual.share.listen.90d                     0.23568 best=0.24088 n=5
+23:09:39   fwd  14   ual.share.listen.14d                     0.22594 best=0.24088 n=5
+23:09:39   fwd  15   ui.mratio.org.90d                        0.23157 best=0.24088 n=5
+23:09:40 === stage select done in 7s, peak RSS 8.6 GB
+23:09:40 === stage test_feats
+[test/final] 78 features x 100,929 rows: global 8s, total 8s
+[test/manual] 41 features x 100,929 rows: global 8s, total 8s
+23:09:56 === stage test_feats done in 16s, peak RSS 8.6 GB
+23:09:56 === stage final
+23:09:57 tune {'num_leaves': 31, 'min_data_in_leaf': 50}: 0.25834
+23:09:57 tune {'num_leaves': 31, 'min_data_in_leaf': 200}: 0.25795
+23:09:58 tune {'num_leaves': 63, 'min_data_in_leaf': 50}: 0.26272
+23:09:58 tune {'num_leaves': 63, 'min_data_in_leaf': 200}: 0.26199
+23:09:59 tune {'num_leaves': 127, 'min_data_in_leaf': 50}: 0.25849
+23:10:00 tune {'num_leaves': 127, 'min_data_in_leaf': 200}: 0.26180
+23:10:00 candidate scores only: 0 feats, val {'ndcg@10': 0.20583587708041293, 'recall@10': 0.21038492063492062, 'ndcg@100': 0.23407577529413254, 'recall@100': 0.317771996475596}, 0s
+23:10:03 manual: 41 feats, val {'ndcg@10': 0.2627189071563644, 'recall@10': 0.26188756613756614, 'ndcg@100': 0.27791414281183247, 'recall@100': 0.3535096330070894}, 1s
+23:10:04 auto: top-B by importance: 39 feats, val {'ndcg@10': 0.24134291286172896, 'recall@10': 0.23848544973544974, 'ndcg@100': 0.2698285826581134, 'recall@100': 0.3527674753930334}, 0s
+23:10:05 auto: forward (budget B): 5 feats, val {'ndcg@10': 0.23267681194312237, 'recall@10': 0.23083730158730156, 'ndcg@100': 0.25677034819772976, 'recall@100': 0.3408904764518889}, 0s
+23:10:06 auto: forward: 5 feats, val {'ndcg@10': 0.23267681194312237, 'recall@10': 0.23083730158730156, 'ndcg@100': 0.25677034819772976, 'recall@100': 0.3408904764518889}, 0s
+23:10:06 auto: forward + window refine: 5 feats, val {'ndcg@10': 0.23267681194312237, 'recall@10': 0.23083730158730156, 'ndcg@100': 0.25677034819772976, 'recall@100': 0.3408904764518889}, 0s
+23:10:08 auto: all screened: 39 feats, val {'ndcg@10': 0.2444222613765976, 'recall@10': 0.24207936507936503, 'ndcg@100': 0.27191808860991273, 'recall@100': 0.35711866349382093}, 0s
+23:10:11 manual + auto (fwd+win): 44 feats, val {'ndcg@10': 0.2623517458978955, 'recall@10': 0.26185714285714284, 'ndcg@100': 0.2777458090920573, 'recall@100': 0.35503298849329384}, 1s
+23:10:13 manual - user: 33 feats, val {'ndcg@10': 0.26034603685373564, 'recall@10': 0.2599021164021164, 'ndcg@100': 0.27549517728398387, 'recall@100': 0.3546098399843523}, 0s
+23:10:16 manual - item: 30 feats, val {'ndcg@10': 0.25570992795821285, 'recall@10': 0.2567817460317461, 'ndcg@100': 0.2760030822991308, 'recall@100': 0.3572066416304301}, 0s
+23:10:18 manual - artist: 39 feats, val {'ndcg@10': 0.2576490969000358, 'recall@10': 0.25553703703703706, 'ndcg@100': 0.2775375500101232, 'recall@100': 0.3576871920801194}, 0s
+23:10:20 manual - user-item (direct): 31 feats, val {'ndcg@10': 0.23486156806170375, 'recall@10': 0.23901851851851855, 'ndcg@100': 0.2617785464568154, 'recall@100': 0.3477063686097347}, 0s
+23:10:22 manual - user-artist/album (indirect): 31 feats, val {'ndcg@10': 0.2524633705821441, 'recall@10': 0.24897089947089948, 'ndcg@100': 0.2737346978473977, 'recall@100': 0.3519737530331915}, 0s
+23:10:27 TEST candidate scores only: ndcg@10=0.17203 recall@100=0.28706
+23:10:27 TEST manual: ndcg@10=0.23031 recall@100=0.31706
+23:10:27 TEST auto: top-B by importance: ndcg@10=0.21898 recall@100=0.31598
+23:10:27 TEST auto: forward (budget B): ndcg@10=0.19451 recall@100=0.30672
+23:10:27 TEST auto: forward: ndcg@10=0.19451 recall@100=0.30672
+23:10:27 TEST auto: forward + window refine: ndcg@10=0.19451 recall@100=0.30672
+23:10:27 TEST auto: all screened: ndcg@10=0.21852 recall@100=0.31972
+23:10:27 TEST manual + auto (fwd+win): ndcg@10=0.23303 recall@100=0.31761
+23:10:27 TEST manual - user: ndcg@10=0.22530 recall@100=0.31480
+23:10:27 TEST manual - item: ndcg@10=0.23088 recall@100=0.31732
+23:10:27 TEST manual - artist: ndcg@10=0.23117 recall@100=0.31578
+23:10:27 TEST manual - user-item (direct): ndcg@10=0.19692 recall@100=0.31301
+23:10:27 TEST manual - user-artist/album (indirect): ndcg@10=0.22671 recall@100=0.31212
+23:10:27 TEST heur: repeat (rep_rank): ndcg@10=0.16944 recall@100=0.29949
+23:10:27 TEST heur: item2item score: ndcg@10=0.07752 recall@100=0.14500
+23:10:27 TEST heur: popularity 1d: ndcg@10=0.02166 recall@100=0.16223
+23:10:27 TEST heur: rep > i2i > artist > pop: ndcg@10=0.17890 recall@100=0.29682
+23:10:27 === stage final done in 32s, peak RSS 8.6 GB
+23:10:27 === stage scaling
+23:10:33 SCALING manual @63: 0.20081
+23:10:33 SCALING auto: forward + window refine @63: 0.17941
+23:10:33 SCALING manual + auto (fwd+win) @63: 0.20326
+23:10:33 SCALING manual @127: 0.22147
+23:10:33 SCALING auto: forward + window refine @127: 0.19108
+23:10:33 SCALING manual + auto (fwd+win) @127: 0.22483
+23:10:33 SCALING manual @254: 0.22292
+23:10:33 SCALING auto: forward + window refine @254: 0.19259
+23:10:33 SCALING manual + auto (fwd+win) @254: 0.22337
+23:10:33 SCALING manual @509: 0.23031
+23:10:33 SCALING auto: forward + window refine @509: 0.19451
+23:10:33 SCALING manual + auto (fwd+win) @509: 0.23303
+23:10:33 === stage scaling done in 6s, peak RSS 8.6 GB

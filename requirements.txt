@@ -1,0 +1,7 @@
+polars==2.0.0
+pyarrow==26.0.0
+lightgbm==4.7.0
+numpy
+scipy
+psutil
+matplotlib

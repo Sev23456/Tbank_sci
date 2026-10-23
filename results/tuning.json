@@ -1,0 +1,44 @@
+{
+ "best": {
+  "num_leaves": 63,
+  "min_data_in_leaf": 50
+ },
+ "grid": [
+  {
+   "num_leaves": 31,
+   "min_data_in_leaf": 50,
+   "val_ndcg@10": 0.25874054796384033,
+   "trees": 665
+  },
+  {
+   "num_leaves": 31,
+   "min_data_in_leaf": 200,
+   "val_ndcg@10": 0.25828810924107753,
+   "trees": 341
+  },
+  {
+   "num_leaves": 63,
+   "min_data_in_leaf": 50,
+   "val_ndcg@10": 0.25961947989156087,
+   "trees": 450
+  },
+  {
+   "num_leaves": 63,
+   "min_data_in_leaf": 200,
+   "val_ndcg@10": 0.25942741009198717,
+   "trees": 419
+  },
+  {
+   "num_leaves": 127,
+   "min_data_in_leaf": 50,
+   "val_ndcg@10": 0.2591940899666077,
+   "trees": 233
+  },
+  {
+   "num_leaves": 127,
+   "min_data_in_leaf": 200,
+   "val_ndcg@10": 0.2583418917521014,
+   "trees": 134
+  }
+ ]
+}

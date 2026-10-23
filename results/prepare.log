@@ -1,0 +1,17 @@
+﻿bucket 0: uids [10,62500] rows=29,640,757 t=3s
+bucket 1: uids [62510,125000] rows=29,474,982 t=4s
+bucket 2: uids [125010,187500] rows=30,386,250 t=5s
+bucket 3: uids [187510,250000] rows=30,542,931 t=6s
+bucket 4: uids [250010,312500] rows=29,490,760 t=7s
+bucket 5: uids [312510,375000] rows=30,702,309 t=8s
+bucket 6: uids [375010,437500] rows=30,897,396 t=9s
+bucket 7: uids [437510,500000] rows=29,486,861 t=10s
+bucket 8: uids [500010,562500] rows=30,112,334 t=11s
+bucket 9: uids [562510,625000] rows=29,872,359 t=13s
+bucket 10: uids [625010,687500] rows=30,623,603 t=14s
+bucket 11: uids [687510,750000] rows=30,411,164 t=15s
+bucket 12: uids [750010,812500] rows=29,602,702 t=16s
+bucket 13: uids [812510,875000] rows=29,227,328 t=17s
+bucket 14: uids [875010,937500] rows=29,964,030 t=18s
+bucket 15: uids [937510,1000000] rows=29,819,798 t=19s
+done: 480,255,564 rows in 19s
